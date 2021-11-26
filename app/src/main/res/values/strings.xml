@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Ticketapp</string>
+
+    <string name="buy_ticket">Ticket kaufen</string>
+    <string name="insert_money">Geld einwerfen</string>
+    <string name="already_sold">Bereits gezahlt:</string>
+    <string name="v1c">0,01€</string>
+    <string name="v2c">0,02€</string>
+    <string name="v5c">0,05€</string>
+    <string name="v10c">0,10€</string>
+    <string name="v20c">0,20€</string>
+    <string name="v50c">0,50€</string>
+    <string name="v1e">1,00€</string>
+    <string name="v2e">2,00€</string>
+</resources>
