@@ -10,6 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val sharedPreference: SharedPreference = SharedPreference(this)
+
+    }
+
+    fun startActivity_insert(view: View) {
+        val intent = Intent(this, activity_insert_money::class.java)
+        startActivity(intent)
     }
 
     fun startActivity_buy(view: View) {

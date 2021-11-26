@@ -12,4 +12,9 @@
     <string name="v50c">0,50€</string>
     <string name="v1e">1,00€</string>
     <string name="v2e">2,00€</string>
+
+    <string name="preisA">Preisstufe A:\n2,70 €</string>
+    <string name="preisB">Preisstufe B:\n5,20 €</string>
+    <string name="preisC">Preisstufe C:\n9,90 €</string>
+    <string name="preisD">Preisstufe D:\n15,20 €</string>
 </resources>

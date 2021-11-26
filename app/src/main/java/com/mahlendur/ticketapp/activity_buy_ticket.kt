@@ -1,35 +1,40 @@
 package com.mahlendur.ticketapp
 
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_buy_ticket.*
-
 
 class activity_buy_ticket : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        val SharedPreferences: SharedPreferences = this.getSharedPreferences("com.mahlendur.ticketapp.alreadyPaid", MODE_PRIVATE)
-        
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_ticket)
 
-        btn1c.setOnClickListener { onEntry(1) }
-        btn2c.setOnClickListener { onEntry(2) }
-        btn5c.setOnClickListener { onEntry(5) }
-        btn10c.setOnClickListener { onEntry(10) }
-        btn20c.setOnClickListener { onEntry(20) }
-        btn50c.setOnClickListener { onEntry(50) }
-        btn1e.setOnClickListener { onEntry(100) }
-        btn2e.setOnClickListener { onEntry(200) }
+        val sharedPreference: SharedPreference = SharedPreference(this)
+        var alreadyPaid = sharedPreference.getValueInt("alreadyPaid").toDouble()/100
+        txtPaid_buy.text = alreadyPaid.toString() + " €"
 
+        btn_A.setOnClickListener { onEntry(270) }
+        btn_B.setOnClickListener { onEntry(520) }
+        btn_C.setOnClickListener { onEntry(990) }
+        btn_D.setOnClickListener { onEntry(1520) }
     }
 
     private fun onEntry(entryVal: Int) {
+        val sharedPreference: SharedPreference = SharedPreference(this)
+        var alreadyPaid = sharedPreference.getValueInt("alreadyPaid")
 
-
-
+        if (alreadyPaid >= entryVal) {
+            val toast = Toast.makeText(applicationContext, "Ticket wird generiert, bitte warten!", Toast.LENGTH_LONG)
+            toast.show()
+            alreadyPaid -= entryVal
+            sharedPreference.save("alreadyPaid", alreadyPaid)
+            txtPaid_buy.text = (alreadyPaid.toDouble()/100).toString() + " €"
+        } else {
+            val toast = Toast.makeText(applicationContext, "Nicht genügend Geld eingeworfen!", Toast.LENGTH_LONG)
+            toast.show()
+        }
     }
+
+
 }
