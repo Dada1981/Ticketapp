@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.room.Room
+import org.jetbrains.anko.doAsync
+import java.time.OffsetDateTime
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +14,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val sharedPreference: SharedPreference = SharedPreference(this)
-
+        doAsync {
+            val ticketDAO: ticketDAO = cacheDb.ticketDAO()
+            ticketDAO.getAll()
+        }
     }
 
     fun startActivity_insert(view: View) {
