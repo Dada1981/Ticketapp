@@ -13,10 +13,10 @@ class activity_show_ticket : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_ticket)
 
-        val actTime = intent.getStringExtra("actTime")
+        val givenTime = intent.getStringExtra("givenTime")
 
         val writer = QRCodeWriter()
-        val bitMatrix = writer.encode(actTime, BarcodeFormat.QR_CODE, 512, 512)
+        val bitMatrix = writer.encode(givenTime, BarcodeFormat.QR_CODE, 512, 512)
         val width = bitMatrix.width
         val height = bitMatrix.height
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)

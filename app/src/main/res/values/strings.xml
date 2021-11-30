@@ -4,6 +4,8 @@
     <string name="buy_ticket">Ticket kaufen</string>
     <string name="insert_money">Geld einwerfen</string>
     <string name="already_sold">Bereits gezahlt:</string>
+    <string name="show_all_tickets">Alle Tickets anzeigen</string>
+
     <string name="v1c">0,01€</string>
     <string name="v2c">0,02€</string>
     <string name="v5c">0,05€</string>
