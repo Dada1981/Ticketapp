@@ -104,4 +104,34 @@
         android:text="@string/v2e"
         app:layout_constraintStart_toEndOf="@+id/btn1e"
         app:layout_constraintTop_toBottomOf="@+id/btn20c" />
+
+    <Button
+        android:id="@+id/btn5e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/v5e"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1e" />
+
+    <Button
+        android:id="@+id/btn10e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/v10e"
+        app:layout_constraintStart_toEndOf="@+id/btn5e"
+        app:layout_constraintTop_toBottomOf="@+id/btn2e" />
+
+    <Button
+        android:id="@+id/btn20e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/v20e"
+        app:layout_constraintStart_toEndOf="@+id/btn10e"
+        app:layout_constraintTop_toBottomOf="@+id/btn2e" />
 </androidx.constraintlayout.widget.ConstraintLayout>

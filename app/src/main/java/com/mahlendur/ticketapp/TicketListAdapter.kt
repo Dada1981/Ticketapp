@@ -1,5 +1,6 @@
 package com.mahlendur.ticketapp
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +11,9 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mahlendur.ticketapp.TicketListAdapter.TicketViewHolder
+import java.time.format.DateTimeFormatter
 
-class TicketListAdapter : ListAdapter<Ticket, TicketViewHolder>(TicketsComparator()) {
+class TicketListAdapter(var mContext: Context) : ListAdapter<Ticket, TicketViewHolder>(TicketsComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {
         return TicketViewHolder.create(parent)
@@ -20,6 +22,11 @@ class TicketListAdapter : ListAdapter<Ticket, TicketViewHolder>(TicketsComparato
     override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
         val current = getItem(position)
         holder.bind(current.dateCreated + " | " + current.ticketLvl)
+        holder.itemView.setOnClickListener {
+            val mIntent = Intent(mContext, activity_show_ticket::class.java)
+            mIntent.putExtra("givenTime", current.dateCreated)
+            mContext.startActivity(mIntent)
+        }
     }
 
 

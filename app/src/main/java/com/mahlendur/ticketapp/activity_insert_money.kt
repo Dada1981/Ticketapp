@@ -23,6 +23,9 @@ class activity_insert_money : AppCompatActivity() {
         btn50c.setOnClickListener { onEntry(50) }
         btn1e.setOnClickListener { onEntry(100) }
         btn2e.setOnClickListener { onEntry(200) }
+        btn5e.setOnClickListener { onEntry(500) }
+        btn10e.setOnClickListener { onEntry(1000) }
+        btn20e.setOnClickListener { onEntry(2000) }
 
     }
 

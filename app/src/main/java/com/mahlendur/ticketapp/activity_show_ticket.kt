@@ -4,15 +4,18 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import kotlinx.android.synthetic.main.activity_show_ticket.*
+import org.w3c.dom.Text
 
 class activity_show_ticket : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_ticket)
 
+        val txtDate = findViewById<TextView>(R.id.txtDate)
         val givenTime = intent.getStringExtra("givenTime")
 
         val writer = QRCodeWriter()
@@ -26,6 +29,8 @@ class activity_show_ticket : AppCompatActivity() {
             }
         }
         ticketQR.setImageBitmap(bitmap)
+
+        txtDate.text = givenTime
     }
 
 

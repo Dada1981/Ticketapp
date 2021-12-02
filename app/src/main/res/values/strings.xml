@@ -5,6 +5,7 @@
     <string name="insert_money">Geld einwerfen</string>
     <string name="already_sold">Bereits gezahlt:</string>
     <string name="show_all_tickets">Alle Tickets anzeigen</string>
+    <string name="delete_all_tickets">Alle Tickets löschen</string>
 
     <string name="v1c">0,01€</string>
     <string name="v2c">0,02€</string>
@@ -14,6 +15,13 @@
     <string name="v50c">0,50€</string>
     <string name="v1e">1,00€</string>
     <string name="v2e">2,00€</string>
+    <string name="v5e">5,00€</string>
+    <string name="v10e">10,00€</string>
+    <string name="v20e">20,00€</string>
+    <string name="v50e">50,00€</string>
+    <string name="v100e">100,00€</string>
+    <string name="v200e">200,00€</string>
+    <string name="v500e">500,00€</string>
 
     <string name="preisA">Preisstufe A:\n2,70 €</string>
     <string name="preisB">Preisstufe B:\n5,20 €</string>
