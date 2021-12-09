@@ -8,9 +8,8 @@ import android.widget.TextView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import kotlinx.android.synthetic.main.activity_show_ticket.*
-import org.w3c.dom.Text
 
-class activity_show_ticket : AppCompatActivity() {
+class ShowTicketActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_ticket)

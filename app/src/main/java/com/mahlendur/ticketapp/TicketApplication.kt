@@ -5,8 +5,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
 class TicketApplication : Application() {
-    val applicationScope = CoroutineScope(SupervisorJob())
+    private val applicationScope = CoroutineScope(SupervisorJob())
 
-    val database by lazy { TicketRoomDatabase.getDatabase(this, applicationScope) }
+    private val database by lazy { TicketRoomDatabase.getDatabase(this, applicationScope) }
     val repository by lazy { TicketRepository(database.TicketDAO()) }
 }

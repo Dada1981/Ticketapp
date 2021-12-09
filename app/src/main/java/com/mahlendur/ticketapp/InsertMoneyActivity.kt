@@ -1,19 +1,19 @@
 package com.mahlendur.ticketapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_insert_money.*
 
 
-class activity_insert_money : AppCompatActivity() {
+class InsertMoneyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        val sharedPreference: SharedPreference = SharedPreference(this)
+        val sharedPreference = SharedPreference(this)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_money)
         val alreadyPaid = sharedPreference.getValueInt("alreadyPaid").toDouble()/100
-        txtPaid.text = alreadyPaid.toString() + " €"
+        txtPaid.text = "$alreadyPaid €"
 
         btn1c.setOnClickListener { onEntry(1) }
         btn2c.setOnClickListener { onEntry(2) }
@@ -30,9 +30,9 @@ class activity_insert_money : AppCompatActivity() {
     }
 
     private fun onEntry(entryVal: Int) {
-        val sharedPreference: SharedPreference = SharedPreference(this)
+        val sharedPreference = SharedPreference(this)
         var alreadyPaid: Int = sharedPreference.getValueInt("alreadyPaid")
-        alreadyPaid = alreadyPaid + entryVal
+        alreadyPaid += entryVal
         sharedPreference.save("alreadyPaid", alreadyPaid)
         txtPaid.text = (alreadyPaid.toDouble()/100).toString() + " €"
     }

@@ -4,28 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import java.time.OffsetDateTime
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sharedPreference: SharedPreference = SharedPreference(this)
+        val sharedPreference = SharedPreference(this)
     }
 
-    fun startActivity_insert(view: View) {
-        val intent = Intent(this, activity_insert_money::class.java)
+    fun startActivityInsert(view: View) {
+        val intent = Intent(this, InsertMoneyActivity::class.java)
         startActivity(intent)
     }
 
-    fun startActivity_buy(view: View) {
-        val intent = Intent(this, activity_buy_ticket::class.java)
+    fun startActivityBuy(view: View) {
+        val intent = Intent(this, BuyTicketActivity::class.java)
         startActivity(intent)
     }
 
-    fun startActivity_showAll(view: View) {
-        val intent = Intent(this, activity_all_tickets::class.java)
+    fun startActivityShowAll(view: View) {
+        val intent = Intent(this, AllTicketsActivity::class.java)
         startActivity(intent)
     }
 

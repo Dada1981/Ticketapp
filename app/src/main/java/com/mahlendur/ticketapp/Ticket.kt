@@ -1,8 +1,6 @@
 package com.mahlendur.ticketapp
 
-import android.content.Context
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 
 @Entity(tableName = "ticket_table")
 class Ticket (

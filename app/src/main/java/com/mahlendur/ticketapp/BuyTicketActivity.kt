@@ -1,7 +1,6 @@
 package com.mahlendur.ticketapp
 
 import android.content.Intent
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -10,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_buy_ticket.*
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
-class activity_buy_ticket : AppCompatActivity() {
+class BuyTicketActivity : AppCompatActivity() {
     private val ticketViewModel: TicketViewModel by viewModels {
         TicketViewModelFactory((application as TicketApplication).repository)
     }
@@ -19,9 +18,9 @@ class activity_buy_ticket : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_ticket)
 
-        val sharedPreference: SharedPreference = SharedPreference(this)
+        val sharedPreference = SharedPreference(this)
         val alreadyPaid = sharedPreference.getValueInt("alreadyPaid").toDouble()/100
-        txtPaid_buy.text = alreadyPaid.toString() + " €"
+        txtPaid_buy.text = "$alreadyPaid €"
 
         btn_A.setOnClickListener { onEntry(270, "A") }
         btn_B.setOnClickListener { onEntry(520, "B") }
@@ -30,7 +29,7 @@ class activity_buy_ticket : AppCompatActivity() {
     }
 
     private fun onEntry(entryVal: Int, lvl: String) {
-        val sharedPreference: SharedPreference = SharedPreference(this)
+        val sharedPreference = SharedPreference(this)
         var alreadyPaid = sharedPreference.getValueInt("alreadyPaid")
 
         if (alreadyPaid >= entryVal) {
@@ -45,7 +44,7 @@ class activity_buy_ticket : AppCompatActivity() {
             ticketViewModel.insert(Ticket(OffsetDateTime.now().toString(), lvl))
 
 
-            val intent = Intent(this, activity_show_ticket::class.java)
+            val intent = Intent(this, ShowTicketActivity::class.java)
             intent.putExtra("givenTime", actTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
             startActivity(intent)
         } else {

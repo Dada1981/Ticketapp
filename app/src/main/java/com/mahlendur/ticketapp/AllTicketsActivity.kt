@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.activity.viewModels
 
-class activity_all_tickets : AppCompatActivity() {
+class AllTicketsActivity : AppCompatActivity() {
     private val ticketViewModel: TicketViewModel by viewModels {
         TicketViewModelFactory((application as TicketApplication).repository)
     }
@@ -30,7 +30,7 @@ class activity_all_tickets : AppCompatActivity() {
 
     }
 
-    fun click_Delete(view: View) {
+    fun clickDelete(view: View) {
         ticketViewModel.deleteAll()
         Toast.makeText(this, "Tickets gelöscht!", Toast.LENGTH_SHORT).show()
     }

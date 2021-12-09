@@ -6,11 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Ticket::class), version = 1, exportSchema = false)
-public abstract class TicketRoomDatabase : RoomDatabase() {
+@Database(entities = [Ticket::class], version = 1, exportSchema = false)
+abstract class TicketRoomDatabase : RoomDatabase() {
 
     abstract fun TicketDAO(): TicketDAO
 

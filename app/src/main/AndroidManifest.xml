@@ -11,16 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ticketapp">
         <activity
-            android:name=".activity_all_tickets"
+            android:name=".AllTicketsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_show_ticket"
+            android:name=".ShowTicketActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_buy_ticket"
+            android:name=".BuyTicketActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_insert_money"
+            android:name=".InsertMoneyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
