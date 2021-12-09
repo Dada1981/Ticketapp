@@ -6,6 +6,7 @@
     <string name="already_sold">Bereits gezahlt:</string>
     <string name="show_all_tickets">Alle Tickets anzeigen</string>
     <string name="delete_all_tickets">Alle Tickets löschen</string>
+    <string name="refund_money">Geld auszahlen</string>
 
     <string name="v1c">0,01€</string>
     <string name="v2c">0,02€</string>
